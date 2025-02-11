@@ -1,0 +1,49 @@
+---
+import ArrowUpRight from "@assets/arrow-up-right.svg";
+
+const projects = [
+  {
+    name: "Balance",
+    description:
+      "A simple personal finance app to help you manage your finances.",
+    url: "https://balance.joaograca.dev/",
+  },
+  {
+    name: "Portfolio",
+    description: "My personal portfolio builded with Astro and Tailwind",
+    url: "https://joaograca.dev/",
+  },
+  {
+    name: "Resume Maker",
+    description: "A minimalist resumer maker.",
+    url: "https://resumemaker.joaograca.dev/",
+  },
+];
+---
+
+<section class="mb-16">
+  <h2 class="mb-8 text-lg font-semibold text-zinc-100">Projects</h2>
+
+  <ul class="space-y-6">
+    {
+      projects.map((project) => (
+        <li class="space-y-1">
+          <a
+            class="w-fit group flex items-center font-medium text-zinc-200 underline decoration-zinc-600 underline-offset-4 sm:hover:decoration-zinc-400"
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${project.name} live (opens in a new tab)`}
+          >
+            {project.name}
+            <ArrowUpRight class="ml-1 text-zinc-400 sm:group-hover:text-zinc-200" />
+          </a>
+
+          <p class="text-sm leading-relaxed text-zinc-400">
+            {project.description}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</section>

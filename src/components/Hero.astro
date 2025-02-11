@@ -1,0 +1,69 @@
+---
+import ArrowUpRight from "@assets/arrow-up-right.svg";
+import { Image } from "astro:assets";
+
+const socialLinks = [
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/jcggraca/",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/jcggraca",
+  },
+  {
+    name: "Mail",
+    url: "mailto:mail@joaograca.dev",
+  },
+];
+---
+
+<section class="mb-16">
+  <div class="mb-6 flex gap-2">
+    <Image
+      src="https://avatars.githubusercontent.com/u/13164532?v=4"
+      alt="It's me, João Graça"
+      class="rounded-lg"
+      width={90}
+      height={90}
+      loading="eager"
+    />
+
+    <div>
+      <span class="text-zinc-400">Hey, I'm</span>
+      <h1 class="text-4xl font-semibold text-zinc-100">João Graça</h1>
+    </div>
+  </div>
+
+  <p class="mb-6 text-zinc-400">
+    A Senior Front End Developer from Portugal with 8 years of experience.
+    Currently working at <a
+      class="text-zinc-200 underline decoration-zinc-600 underline-offset-4 sm:hover:decoration-zinc-400"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Tekever (opens in a new tab)`}
+      href="https://www.tekever.com/">Tekever</a
+    >.
+  </p>
+
+  <p class="text-zinc-400">Passionate about coding, films, chess and music.</p>
+
+  <ul class="flex flex-wrap mt-6 gap-x-6 gap-y-2">
+    {
+      socialLinks.map((link) => (
+        <li>
+          <a
+            class="flex items-center text-zinc-400 sm:hover:text-zinc-100 underline decoration-zinc-600 underline-offset-4 sm:hover:decoration-zinc-400"
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${link.name} (opens in a new tab)`}
+          >
+            {link.name}
+            <ArrowUpRight />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

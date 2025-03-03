@@ -7,10 +7,36 @@ import Stars from "@components/Stars.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonincal" href="https://joaograca.dev" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="João Graça" />
+
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Front End Developer based in Portugal."
+    />
+    <meta property="og:site_name" content="João Graça" />
+    <meta property="og:title" content="João Graça" />
+    <meta property="og:image" content="https://joaograca.dev/og.png" />
+    <meta property="og:url" content="https://joaograca.dev" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@jcggraca" />
+    <meta name="twitter:creator" content="@jcggraca" />
+    <meta name="twitter:title" content="João Graça" />
+    <meta
+      name="twitter:description"
+      content="Front End Developer based in Portugal."
+    />
+    <meta name="twitter:image" content="https://joaograca.dev/og.png" />
+
     <title>João Graça</title>
   </head>
   <body>

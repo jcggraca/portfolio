@@ -1,0 +1,17 @@
+---
+import ArrowRight from "@assets/move-right.svg";
+const { title, link, featured = false } = Astro.props;
+---
+
+{
+  featured ? (
+    <a href={link} class="block mb-6">
+      <h2 class="mb-8 text-lg font-semibold text-zinc-100 sm:hover:text-zinc-200">
+        {title}
+        <ArrowRight class="ml-1 inline-block w-4 h-4 text-zinc-400 sm:hover:text-zinc-200" />
+      </h2>
+    </a>
+  ) : (
+    <h2 class="mb-8 text-lg font-semibold text-zinc-100">{title}</h2>
+  )
+}

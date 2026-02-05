@@ -2,11 +2,13 @@
 import { projects } from "@data/projects";
 import Title from "./Title.astro";
 import Link from "./Link.astro";
+
 const { featured = false } = Astro.props;
+const title = featured ? "Projects" : "All Projects";
 ---
 
 <section class="mb-16">
-  <Title title="Projects" link="/projects" featured={featured} />
+  <Title title={title} link="/archive" featured={featured} />
 
   <ul class="space-y-6">
     {

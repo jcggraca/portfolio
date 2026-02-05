@@ -1,0 +1,31 @@
+---
+import { ghostClient } from "../lib/ghost";
+import Title from "./Title.astro";
+
+const { featured = false } = Astro.props;
+const posts = await ghostClient.posts
+  .browse({
+    limit: featured ? "3" : "all",
+  })
+  .catch((err) => {
+    throw new Error("Getting Ghost posts.", err);
+  });
+---
+
+<section class="mb-16">
+  <Title title="Posts" link="/post" featured={featured} />
+
+  <ul class="space-y-6">
+    {
+      posts?.map((post) => (
+        <li class="space-y-1">
+          <a href={`/post/${post.slug}`}>
+            <h1 class="font-medium text-zinc-200 underline decoration-zinc-600 underline-offset-4 sm:hover:decoration-zinc-400">
+              {post.title}
+            </h1>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

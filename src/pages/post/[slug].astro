@@ -5,7 +5,7 @@ import { ghostClient } from "../../lib/ghost";
 export async function getStaticPaths() {
   const posts = await ghostClient.posts
     .browse({
-      limit: "gfdg",
+      limit: "1",
     })
     .catch((err) => {
       console.error(err);

@@ -9,8 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  outDir: "public",
-  publicDir: "static",
   site: "https://joaograca.dev",
   integrations: [
     sitemap(),
@@ -18,6 +16,7 @@ export default defineConfig({
       project: "javascript-astro",
       org: "joao-61",
       authToken: process.env.SENTRY_AUTH_TOKEN,
+      telemetry: false,
     }),
   ],
 });

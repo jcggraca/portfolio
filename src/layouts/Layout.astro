@@ -1,5 +1,5 @@
 ---
-import siteConfig from "@/site.config.ts";
+import siteConfig from "@/site.config";
 import Stars from "@components/Stars.astro";
 import "@fontsource/inter";
 import "@styles/global.css";
@@ -32,6 +32,7 @@ const pageImage = `${pageUrl}${siteConfig.image}`;
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <script
+      is:inline
       defer
       src="https://umami.jgraca.xyz/script.js"
       data-website-id="1b699f51-6f9e-4c89-8746-566aef708108"></script>

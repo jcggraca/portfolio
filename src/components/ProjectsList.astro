@@ -7,10 +7,10 @@ const { featured = false } = Astro.props;
 const title = featured ? "Projects" : "All Projects";
 ---
 
-<section class="mb-16">
-  <Title title={title} link="/archive" featured={featured} />
+<section class="mb-8">
+  <Title title={title} featured={featured} link="/archive" />
 
-  <ul class="space-y-6">
+  <ul class="space-y-6 mb-8">
     {
       projects
         .filter((project) => !featured || project.featured)

@@ -3,6 +3,7 @@ import { ghostClient } from "../lib/ghost";
 import Title from "./Title.astro";
 
 const { featured = false } = Astro.props;
+const title = featured ? "Posts" : "All Posts";
 const posts = await ghostClient.posts
   .browse({
     limit: featured ? "3" : "all",
@@ -12,10 +13,10 @@ const posts = await ghostClient.posts
   });
 ---
 
-<section class="mb-16">
-  <Title title="Posts" link="/post" featured={featured} />
+<section class="mt-12">
+  <Title title={title} featured={featured} link="/post" />
 
-  <ul class="space-y-6">
+  <ul class="space-y-6 mb-8">
     {
       posts?.map((post) => (
         <li class="space-y-1">

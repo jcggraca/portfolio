@@ -2,12 +2,13 @@
 import ArrowUpRight from "@assets/arrow-up-right.svg";
 import { socialLinks } from "@data/socials";
 import { Image } from "astro:assets";
+import Avatar from "@assets/me.jfif";
 ---
 
 <section class="mb-16">
   <div class="mb-6 flex gap-2">
     <Image
-      src="https://avatars.githubusercontent.com/u/13164532?v=4"
+      src={Avatar}
       alt="It's me, João Graça"
       class="rounded-lg"
       width={90}

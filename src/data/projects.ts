@@ -1,10 +1,27 @@
 export const projects = [
   {
+    name: "Hardware Info",
+    description: "An Simple systems resource.",
+    url: "https://gitlab.com/jcggraca/hardware-info",
+    repo: "https://gitlab.com/jcggraca/hardware-info",
+    featured: true,
+    tags: ["Electron", "Typescript", "Vite", "React", "Playwright", "Vitest"],
+  },
+  {
     name: "(WIP) Book Haven - Store (Self-hosted)",
     description: "Online book store built with React, Fastify and Drizzle.",
     url: "https://bookhaven.jgraca.xyz/",
     repo: "https://gitlab.com/jcggraca/mono-book-store",
     featured: true,
+    tags: [
+      "Typescript",
+      "React",
+      "Vite",
+      "Fastify",
+      "Drizzle ORM",
+      "Vitest",
+      "Turborepo",
+    ],
   },
   {
     name: "(WIP) Book Haven - Admin (Self-hosted)",
@@ -12,7 +29,8 @@ export const projects = [
       "Backoffice of the Book Haven store, built with React, Fastify and Drizzle.",
     url: "https://bookhavenadmin.jgraca.xyz/",
     repo: "https://gitlab.com/jcggraca/mono-book-store",
-    featured: true,
+    featured: false,
+    tags: ["Typescript", "React", "Vite", "Drizzle ORM", "Vitest"],
   },
   {
     name: "Balance",
@@ -21,6 +39,7 @@ export const projects = [
     url: "https://balance.joaograca.dev",
     repo: "https://gitlab.com/jcggraca/balance",
     featured: true,
+    tags: ["PWA", "Typescript", "React", "Vite", "Vitest"],
   },
   {
     name: "Portfolio",
@@ -28,6 +47,7 @@ export const projects = [
     url: "https://joaograca.dev",
     repo: "https://gitlab.com/jcggraca/portfolio",
     featured: true,
+    tags: ["Astro", "Typescript", "Tailwind CSS"],
   },
   {
     name: "Resume Maker",
@@ -35,5 +55,6 @@ export const projects = [
     url: "https://resumemaker.joaograca.dev",
     repo: "https://gitlab.com/jcggraca/resume-maker",
     featured: false,
+    tags: ["Typescript", "React", "Vite", "Vitest"],
   },
 ];

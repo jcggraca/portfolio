@@ -1,0 +1,13 @@
+---
+import ArrowRight from "@assets/move-right.svg";
+const { title, link } = Astro.props;
+---
+
+<div class="flex justify-between mb-8">
+  <h2 class="text-lg font-semibold text-zinc-100">{title}</h2>
+
+  <a href={link} class="block text-zinc-400 sm:hover:text-zinc-200">
+    View More
+    <ArrowRight class="ml-1 inline-block w-4 h-4" />
+  </a>
+</div>

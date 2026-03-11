@@ -1,7 +1,7 @@
 export const projects = [
   {
     name: "Hardware Info",
-    description: "An Simple systems resource.",
+    description: "A simple systems resource built with electron and React.",
     url: "https://gitlab.com/jcggraca/hardware-info",
     repo: "https://gitlab.com/jcggraca/hardware-info",
     featured: true,

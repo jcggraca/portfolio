@@ -8,7 +8,7 @@ const { isHomePage = false } = Astro.props;
 const title = isHomePage ? "Projects" : "All Projects";
 ---
 
-<section class="mb-8">
+<section>
   {
     isHomePage ? (
       <TitleSection title={title} link="/archive" />
@@ -17,7 +17,7 @@ const title = isHomePage ? "Projects" : "All Projects";
     )
   }
 
-  <ul class="space-y-6 mb-8">
+  <ul class="space-y-6">
     {
       projects
         .filter((project) => !isHomePage || project.featured)

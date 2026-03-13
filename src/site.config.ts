@@ -1,6 +1,8 @@
 const config: SiteConfig = {
-  title: "João Graça",
-  description: "Front End Developer based in Portugal.",
+  title: "João Graça | Frontend Engineer",
+  author: "João Graça",
+  description:
+    "Frontend Engineer | React • TypeScript • Node.JS | 8+ years building scalable web applications",
   image: "/og.png",
 };
 

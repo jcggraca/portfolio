@@ -8,6 +8,10 @@ export const socialLinks = [
     url: "https://gitlab.com/jcggraca",
   },
   {
+    name: "Github",
+    url: "https://github.com/jcggraca",
+  },
+  {
     name: "Mail",
     url: "mailto:mail@joaograca.dev",
   },

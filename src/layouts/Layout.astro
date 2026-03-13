@@ -13,8 +13,22 @@ const { title, description } = Astro.props;
 
 const pageTitle = title ? `${title} - ${siteConfig.title}` : siteConfig.title;
 const pageDescription = description || siteConfig.description;
-const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, "");
-const pageImage = `${pageUrl}${siteConfig.image}`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const pageImage = new URL(siteConfig.image, Astro.site).href;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.author,
+  jobTitle: "Frontend Engineer",
+  url: pageUrl,
+  sameAs: [
+    "https://github.com/jcggraca",
+    "https://linkedin.com/in/jcggraca",
+    "https://gitlab.com/jcggraca",
+  ],
+  image: pageImage,
+};
 ---
 
 <!doctype html>
@@ -23,39 +37,47 @@ const pageImage = `${pageUrl}${siteConfig.image}`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={pageDescription} />
-    <link rel="canonincal" href={pageUrl} />
+    <link rel="canonical" href={pageUrl} />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content={pageTitle} />
+    <meta name="author" content={siteConfig.author} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <script
       is:inline
       defer
+      type="text/partytown"
       src="https://umami.jgraca.xyz/script.js"
       data-website-id="1b699f51-6f9e-4c89-8746-566aef708108"></script>
 
+    <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={pageDescription} />
-    <meta property="og:site_name" content="João Graça" />
+    <meta property="og:site_name" content={siteConfig.title} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:image" content={pageImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content={pageUrl} />
+    <meta
+      property="og:image:alt"
+      content="João Graça - Frontend Developer Portfolio"
+    />
+    <meta property="og:locale" content="en_GB" />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@jcggraca" />
-    <meta name="twitter:creator" content="@jcggraca" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={Astro.site?.hostname} />
+    <meta property="twitter:url" content={pageUrl} />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={pageImage} />
+    <meta name="twitter:creator" content="@jcggraca" />
 
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={siteConfig.title}
-      href={new URL("rss.xml", Astro.site)}
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personSchema)}
     />
 
     <title>{pageTitle}</title>

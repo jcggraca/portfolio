@@ -1,0 +1,46 @@
+---
+import { projects } from "@data/projects";
+import Title from "./Title.astro";
+import TitleSection from "./TitleSection.astro";
+import Link from "./Link.astro";
+
+const { isHomePage = false } = Astro.props;
+const title = isHomePage ? "Projects" : "All Projects";
+---
+
+<section>
+  {
+    isHomePage ? (
+      <TitleSection title={title} link="/archive" />
+    ) : (
+      <Title title={title} />
+    )
+  }
+
+  <ul class="space-y-6">
+    {
+      projects
+        .filter((project) => !isHomePage || project.featured)
+        .map((project) => (
+          <li class="space-y-1">
+            <div class="w-fit flex gap-4">
+              <Link url={project.url} name={project.name} />
+              {!isHomePage && project.repo && (
+                <Link url={project.repo} name="Repository" />
+              )}
+            </div>
+            <p class="text-sm leading-relaxed text-zinc-300">
+              {project.description}
+            </p>
+            <ul>
+              {project.tags.map((tag) => (
+                <li class="inline-flex items-center rounded-md border border-zinc-800 bg-zinc-900/60 px-2.5 py-0.5 text-xs font-medium text-zinc-300 backdrop-blur mr-2">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+    }
+  </ul>
+</section>
